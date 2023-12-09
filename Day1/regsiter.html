@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login">
+        <h2 id="formTitle">Register Here</h2>
+        <form class="form1" id="loginForm" onsubmit="return validateForm()">
+            <label>Name</label> <input type="text" name="name" id="name" required>
+            <label>Reg No</label> <input type="text" name="regno" id="regno" required>
+            <label>Email</label> <input type="email" name="mail" id="mail" required>
+            <label>Password</label> <input type="password" name="pwd" id="pwd" required>
+            <label>Confirm Password</label> <input type="password" name="pwd1" id="pwd1" required>
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            function validateForm() {
+                let name = document.getElementById("name").value;
+                let regno = document.getElementById("regno").value;
+                let mail = document.getElementById("mail").value;
+                let pwd = document.getElementById("pwd").value;
+                let pwd1 = document.getElementById("pwd1").value;
+
+                if (name === "" || regno === "" || mail === "" || pwd === "" || pwd1 === "") {
+                    alert("All fields are required");
+                    return false;
+                }
+
+                if (pwd !== pwd1) {
+                    alert("Passwords do not match");
+                    return false;
+                }
+
+                alert("Registered Successfully");
+                return true;
+            }
+        </script>
+    </div>
+</body>
+</html>
