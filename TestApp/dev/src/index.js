@@ -1,16 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+//to implement redux we have to import the provider from react-redux as follow
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+import { Provider } from 'react-redux'
+import store from './store'
+import './index.css'
+import App from './App'
+
+// import 'bootstrap/dist/css/bootstrap.min.css'
+//after importing the Provider, it's time to pass it to the wrapper as follow-
+ReactDOM.render(
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  </Provider>,
+  document.getElementById('root')
+)

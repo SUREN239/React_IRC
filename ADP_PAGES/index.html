@@ -3,182 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance App</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Student Management Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        /* Hide the sign-up container by default */
+        #signup-container {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    
-    <header>
-        <h1>Attendance App</h1>
-    </header>
-    <div class = "navbar">
-        <ul>
-            <li>Home</li>
-            <li>Contact</li>
-            <li>Display</li>
-        </ul>
+    <div id="login-container" class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" name="login-username" required>
+
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="login-password" required>
+
+            <button type="button" onclick="validateLogin()">Login</button>
+
+            <!-- Show the "Sign Up" button to reveal the sign-up container -->
+            <p>New user? <button type="button" onclick="showSignup()">Sign Up</button></p>
+        </form>
     </div>
 
-    <div class="card-container">
-       <!-- Repeat this card section for each student -->
-         <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="sanjay.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="SANTHANA.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="saran.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="vikram.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="sharvesh.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="shrijith.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="shyam.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="srini.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="suren.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="surender.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="tarun.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-face card-front">
-                    <img src="varun.JPG" alt="Student Photo">
-                    <h2>Student 1</h2>
-                </div>
-                <div class="card-face card-back">
-                    <h2>Student 1</h2>
-                    <button onclick="markPresent(1)">Mark as Present</button>
-                </div>
-            </div>
-        </div>
-        
+    <div id="signup-container" class="container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <label for="signup-username">Username:</label>
+            <input type="text" id="signup-username" name="signup-username" required>
+
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="signup-password" required>
+
+            <label for="signup-confirm-password">Confirm Password:</label>
+            <input type="password" id="signup-confirm-password" name="signup-confirm-password" required>
+
+            <button type="button" onclick="validateSignup()">Sign Up</button>
+
+            <!-- Show the "Back to Login" button to hide the sign-up container -->
+            <p>Already have an account? <button type="button" onclick="showLogin()">Back to Login</button></p>
+        </form>
     </div>
 
-    <footer>
-        <p>&copy; 2023 Attendance App. All rights reserved.</p>
-    </footer>
+    <div id="portal-container" class="container">
+        <h2>Student Management Portal</h2>
+        <form id="student-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="grade">Grade:</label>
+            <input type="text" id="grade" name="grade" required>
+
+            <button type="button" onclick="addStudent()">Add Student</button>
+        </form>
+
+        <table id="student-table">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+            <!-- Student data will be displayed here dynamically -->
+        </table>
+    </div>
 
     <script>
-        function markPresent(studentNumber) {
-            alert("Marking Student " + studentNumber + " as Present!");
-          
+        function validateLogin() {
+            // Existing login validation logic
+            // ...
+
+            // For demonstration purposes, let's assume the login is successful
+            alert('Login successful!');
+        }
+
+        function validateSignup() {
+            // Existing signup validation logic
+            // ...
+
+            // For demonstration purposes, let's assume the signup is successful
+            alert('Sign up successful!');
+            // You might want to redirect to the student management portal or login page here
+
+            // Reset the form and hide the sign-up container after successful signup
+            document.getElementById('signup-form').reset();
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        }
+
+        function addStudent() {
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var grade = document.getElementById('grade').value;
+
+            // Perform client-side validation (you should have server-side validation as well)
+            if (name && age && grade) {
+                var table = document.getElementById('student-table');
+                var row = table.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+
+                cell1.innerHTML = name;
+                cell2.innerHTML = age;
+                cell3.innerHTML = grade;
+
+                // Clear the form fields after adding a student
+                document.getElementById('name').value = '';
+                document.getElementById('age').value = '';
+                document.getElementById('grade').value = '';
+            } else {
+                alert('Please fill in all the fields.');
+            }
+        }
+
+        function showSignup() {
+            // Show the sign-up container and hide the login container
+            document.getElementById('signup-container').style.display = 'block';
+            document.getElementById('login-container').style.display = 'none';
+        }
+
+        function showLogin() {
+            // Show the login container and hide the sign-up container
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
         }
     </script>
-
 </body>
 </html>
-
