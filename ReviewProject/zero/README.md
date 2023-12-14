@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**
+
+## STUDENT INFORMATION MANAGEMENT PORTAL
+
+# LOGIN 
+<img src = "https://github.com/SUREN239/React_IRC/blob/main/ReviewProject/zero/Photo/Screenshot%202023-12-13%20151715.png">
+
+# REGISTRATION
+<img src = "https://github.com/SUREN239/React_IRC/blob/main/ReviewProject/zero/Photo/Screenshot%202023-12-13%20151831.png">
+
+# Add Student
+<img src = "https://github.com/SUREN239/React_IRC/blob/main/ReviewProject/zero/Photo/Screenshot%202023-12-13%20151935.png">
+
+# User Navigation
+<img src = "https://github.com/SUREN239/React_IRC/blob/main/ReviewProject/zero/Photo/Screenshot%202023-12-13%20152033.png">
+
+# Admin Login
+<img src = "https://github.com/SUREN239/React_IRC/blob/main/ReviewProject/zero/Photo/Screenshot%202023-12-13%20152100.png">
+
+# Admin Dashboard
+<img src = "https://github.com/SUREN239/React_IRC/blob/main/ReviewProject/zero/Photo/Screenshot%202023-12-13%20152128.png">
